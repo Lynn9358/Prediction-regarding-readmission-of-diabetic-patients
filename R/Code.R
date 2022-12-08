@@ -1,8 +1,8 @@
-full_model = read.csv("~/Downloads/FINAL/diabetic_data.csv")
+diadata = read.csv("~/Downloads/FINAL/diabetic_data.csv")
 ##remove missing data in gender
-full_model = full_model[full_model$gender != "Unknown/Invalid", ]
+diadata = diadata[diadata$gender != "Unknown/Invalid", ]
 
-cl_model = subset(full_model,select = -c(encounter_id,patient_nbr,weight,payer_code, medical_specialty,examide,citoglipton))
+cl_model = subset(diadata,select = -c(encounter_id,patient_nbr,weight,payer_code, medical_specialty,examide,citoglipton))
 names(cl_model)
 diag = rbind(cl_model$diag_1,cl_model$diag_2,cl_model$diag_3)
 
@@ -17,7 +17,7 @@ b[[i]] = unique(cl_model[,i])
 print(a)
 print(b)
 
-length(which(full_model[,4] == "Unknown/Invalid"))
+length(which(diadata[,4] == "Unknown/Invalid"))
 
 sort(unique(cl_model$admission_source_id))
 length(unique(cl_model$discharge_disposition_id))
