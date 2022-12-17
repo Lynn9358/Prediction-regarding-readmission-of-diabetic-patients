@@ -1,13 +1,51 @@
+install.packages("naivebayes")
+install.packages("psych")
+library(naivebayes)
+library(dplyr)
+library(ggplot2)
+library(psych)
+
 diadata = read.csv("~/Downloads/FINAL/diabetic_data.csv")
+
+#Recode for medical
+Med = c(0,length = 24)
+for (i in 1: 23) {
+  Med[i]= length(diadata[,i+24][which(diadata[,i+24]=="Steady"|
+                                        diadata[,i+24]=="Up"|
+                                        diadata[,i+24]=="Down")])
+}
+names(Med) = colnames(diadata[,c(25:47)])
+barplot(sort(Med,decreasing = TRUE))
+
+
+
+
+
 ##remove missing data in gender
 diadata = diadata[diadata$gender != "Unknown/Invalid", ]
 diadata = diadata[diadata$race != "?", ]
 
 ## giving data to readmission 
-cl_data = subset(diadata,select = -c(encounter_id,patient_nbr,weight,payer_code, medical_specialty,examide,citoglipton,acetohexamide,chlorpropamide, acetohexamide,tolbutamide, miglitol,troglitazone,tolazamide, glipizide.metformin,glimepiride.pioglitazone,metformin.rosiglitazone,metformin.pioglitazone ))
+cl_data = subset(diadata,select = -c(encounter_id,patient_nbr,weight,payer_code, medical_specialty,examide,citoglipton,acetohexamide,chlorpropamide, acetohexamide,tolbutamide, miglitol,troglitazone,tolazamide, glipizide.metformin,glimepiride.pioglitazone,metformin.rosiglitazone,metformin.pioglitazone,glyburide.metformin  ))
 cl_data$readmitted[cl_data$readmitted == "NO"] <- 0
 cl_data$readmitted[cl_data$readmitted == ">30"] <- 1
 cl_data$readmitted[cl_data$readmitted == "<30"] <- 1
+
+
+
+#Recode for medical
+Med = c(0,length = 10)
+for (i in 1: 10) {
+  Med[i]= length(cl_data[,i+19][which(cl_data[,i+19]=="Steady"|
+                                        cl_data[,i+19]=="Up"|
+                                        cl_data[,i+19]=="Down")])
+}
+names(Med) = colnames(cl_data[,c(20:29)])
+barplot(sort(Med,decreasing = TRUE))
+
+
+
+
 
 ## convert data in diag_1 to diag_3 start with V or E to 1000
 cl_data$diag_1_recode <- cl_data$diag_1
@@ -65,8 +103,25 @@ for(i in 1:ncol(cl_data)){
   c[[i]] = table(cl_data[,i])
 }
 
-print(a)
-print(b)
+names(cl_data)
+print(c)
+
+
+
+
+##Naive Bayes
+model <- naive_bayes(readmitted ~ ., data = cl_data, usekernel = T) 
+p <- predict(model, cl_data, type = 'prob')
+
+
+cl_data$metformin_recode <- cl_data$metformin
+cl_data$metformin_recode[which(cl_data$metformin_recode=="Steady"|
+                            cl_data$metformin_recode=="Up"|
+                            cl_data$metformin_recode=="Down")]<- 1
+cl_data$metformin_recode[which(cl_data$metformin_recode=="No")]<- 0
+
+
+
 
 
 
