@@ -6,6 +6,6 @@ We also trained several binary classifiers to predict whether a diabetic patient
 The four prediction methods we used to train the dataset are logistic regression, naive bayesian, decision tree and random forest.
 
 ## Repository description
-### dataprocessing.R: 
+* dataprocessing.R: 
 
 
