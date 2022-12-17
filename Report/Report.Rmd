@@ -53,8 +53,10 @@ Random forest is an ensemble learning method that is used to make predictions ba
 
 
 
-## 4.Results  
-![Figure 1. Logistic Regression ](pltcm_gg_glm.png){width=20%} 
+## 4.Results
+![Figure 1. Logistic Regression](pltcm_gg_glm.png){width=40%}   
+This is the result of Logistic Regression
+
 
 
 
