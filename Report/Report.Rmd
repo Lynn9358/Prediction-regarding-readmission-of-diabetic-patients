@@ -9,6 +9,7 @@ output:
     fig_caption: yes
     includes: null
     latex_engine: lualatex
+
 ---
 
 ## 1.Introduction
@@ -53,8 +54,14 @@ Random forest is an ensemble learning method that is used to make predictions ba
 
 
 
-## 4.Results
-![Figure 1. Logistic Regression](pltcm_gg_glm.png){width=40%}   
+## 4.Results   
+![Figure 1. Logistic Regression](pltcm_gg_glm.png){width=40%}    ![Figure 2. naive Bayesian](pltcm_gg_nb.png){width=40%} 
+  
+
+![Figure 3. LDecision Tree](pltcm_gg_rp.png){width=40%} 
+![Figure 4. Random Forest](pltcm_gg_rf.png){width=40%} 
+
+
 This is the result of Logistic Regression
 
 
