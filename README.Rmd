@@ -1,69 +1,18 @@
+---
+output: github_document
+---
+
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
-  comment = "#>",
-  fig.path = "man/figures/README-",
-  out.width = "100%"
+  comment = "#>"
 )
 ```
 
 # Prediction of Readmission for Diabetic Patients
-
+This is a project to predict the possibility of readmission for diabetic patients based on their 
 <!-- badges: start -->
-[![R-CMD-check](https://github.com/Lynn9358/LinearRegression-R/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/Lynn9358/LinearRegression-R/actions/workflows/R-CMD-check.yaml)
-[![Codecov test coverage](https://codecov.io/gh/Lynn9358/LinearRegression-R/branch/main/graph/badge.svg)](https://app.codecov.io/gh/Lynn9358/LinearRegression-R?branch=main)
-  <!-- badges: end -->
 <!-- badges: end -->
 
-
-## backgrouds
-
-## Overview
-
-Linear regression model in R is a package for simple and multiple linear model fitting, providing a set of verbs that help to solve common model fitting challenges. 
-
--   `LRM_R()` fits linear regression model using least squares method, displays the overall result of fitted regression model, calculates the estimated value，standard deviation and statistics value and confidence intervals of coefficients.
-
-
-## Installation
-
-You can install the development version of LinearRegressionR from [GitHub](https://github.com/) with:
-
-```r
-# install.packages("devtools")
-devtools::install_github("Lynn9358/LinearRegression-R")
-```
-
-## Usage
-
-```r
-library ("LinearRegressionR")
-```
-
-## Example
-
-This is a basic example of Linear Regression:
-``` {r}
-library(LinearRegressionR)
-## basic example code
-LRM_R(mtcars$mpg~mtcars$disp +mtcars$wt+mtcars$qsec )
-``` 
-
-To fit with actual value
-``` {r}
-#Dataset from an experiment on measuring the reaction velocity versus substrate concentration in an enzymatic reaction involving untreated cells or cells treated with Puromycin.
-df_Puromycin = Puromycin[order(Puromycin$conc),]
-y_real = df_Puromycin$conc
-y_model = LRM_R(df_Puromycin$conc~df_Puromycin$rate +df_Puromycin$state)$Y_model
-plot(y_real,type="l",col="red")
-lines(y_model,col="green")
-```
-## missing values
-Delete variable Weight, Payer code, Medical specialty and unknown/invalid rows in Gender.
-
-
-## Reference
-
-Methods in this package  mainly stem from [Introduction to Linear Regression Analysis](https://ebookcentral.proquest.com/lib/umichigan/detail.action?docID=7103892o)
