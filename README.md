@@ -11,7 +11,9 @@ The four prediction methods we used to train the dataset are logistic regression
 * resultsandplots.R: code for model comparison using ROC, AUC and confusion matrix and results for the four methods.
 
 ## Prediction example
-
+|variable name|age    |time_in_hospital|
+|:-----------:|:-----:|:-------------:|
+|value       | 30-40  | 2 days        |
 
 ## Contribution
 Anran Yao:  
