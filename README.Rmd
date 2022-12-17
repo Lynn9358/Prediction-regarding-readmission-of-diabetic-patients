@@ -12,7 +12,8 @@ knitr::opts_chunk$set(
 ```
 
 # Prediction of Readmission for Diabetic Patients
-This is a project to predict the possibility of readmission for diabetic patients based on their 
+This is a project to predict the possibility of readmission for diabetic patients based on their demographic and physical features of patients, medications, number of certain medical record and diagnoses.
 <!-- badges: start -->
-<!-- badges: end -->
 
+<!-- badges: end -->
+##Overview
