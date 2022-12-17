@@ -5,5 +5,7 @@ This project aims to make prediction regarding readmission of diabetic patients 
 We also trained several binary classifiers to predict whether a diabetic patient would be readmitted or not.  
 The four prediction methods we used to train the dataset are logistic regression, naive bayesian, decision tree and random forest.
 
-## missing values
-Delete variable Weight, Payer code, Medical specialty and unknown/invalid rows in Gender.
+## Repository description
+### dataprocessing.R: 
+
+
