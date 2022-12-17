@@ -85,7 +85,7 @@ library(ggplot2)
 #age
 p1 = ggplot(aes(x=age, fill=readmitted), data=cl_data) + geom_bar(position = position_stack()) + ggtitle('Age vs. Readmitted') +  theme(plot.title = element_text(hjust = 0.5))
 p1
-tggsave("p1.png")
+ggsave("p1.png")
 
 #Inpatient
 p2 = ggplot(aes(x=number_inpatient, fill=readmitted), data=cl_data) + geom_bar(position = position_stack()) + ggtitle('Number_inpatient vs. Readmitted') + theme(plot.title = element_text(hjust = 0.5))
