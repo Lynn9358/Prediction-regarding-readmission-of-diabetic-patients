@@ -19,7 +19,7 @@ header-includes:
   - \usepackage{booktabs}
 ---
 
-## 1.Introduction
+## 1. Introduction
 
 Diabetes is a chronic disease that affects millions of people around the
 world with more than one tenths of Americans suffering from it. Managing
@@ -34,7 +34,7 @@ using a dataset from Kaggle. Prediction methods including logistic
 regression, naive bayesian, decision tree and random forest were used,
 and their performances were evaluated by AUC, ROC, and confusion matrix.
 
-## 2.Methods
+## 2. Methods
 
 **2.1 Study Population**\
 The dataset we used in this study was provided by Kaggle which contained
@@ -93,7 +93,7 @@ The right-tailed histogram of the number of inpatient visits versus readmission 
 \begin{subfigure}{.3\textwidth}
 \includegraphics[]{p3.png}
 \end{subfigure}
-\caption{Histograms for Age, Number\_inpatient and Diag\_recode versus Readmitted}
+\caption{Histograms}
 \end{figure}
 
 After visualizing the distribution of readmission versus the above two variables, we then explored diagnose after recoding. The plot shows that 250 which indicates diabetes mellitus is the most frequent code that has a higher readmission rate.
@@ -175,7 +175,7 @@ classification model.
 \caption{Confusion Matrices of Prediction}
 \end{figure}
 
-## 4.Results
+## 4. Results
 
 **4.1 Model Comparison**\
 After conducting the prediction methods to train data and testing the
@@ -249,30 +249,34 @@ knitr::kable(t(table1),format = "pandoc",
 
 
 **4.2 Prediction Example**\
-When a patient is discharged from the hospital, we can calculate the probability of readmission based on their registration information to facilitate future follow-up arrangements. Here is a prediction example of our model. Let’s say a patient aged between 30 to 40, stayed in hospital for 2 days during the encounter, had 44 lab tests, and took 16 distinct of medications, no outpatient/emergency/inpatient visit, got 7 diagnoses, main diagnose was diabetes and took insulin, did not do blood glucose tests in the year preceding the encounter. According to the random forest model, the patient’s probability of readmission is 30.0%, while  logistic gives 37.4%, naive bayesian gives 13.8%, and decision tree gives 30.0%. From model comparison results, we can use the result of random forest as the final prediction of readmission.
+When a patient is discharged from the hospital, we can calculate the probability of readmission based on their registration information to facilitate future follow-up arrangements. Here is a prediction example of our model(Table 2). According to the random forest model, the patient’s probability of readmission is 30.0%, while  logistic gives 37.4%, naive bayesian gives 13.8%, and decision tree gives 30.0%. From model comparison results, we can use the result of random forest as the final prediction of readmission.
+
 
 \begin{table}[H]
 \centering
 \caption{Example}
-\begin{tabular}{lllllll} 
-\toprule
-variables                  & patient.age                   & time\_in\_hospital         & num\_lab\_procedures             & num\_medications       & num\_outpatient    & num\_emergency      \\
-\multicolumn{1}{c}{values} & \multicolumn{1}{c}{{[}30-40)} & \multicolumn{1}{c}{2 days} & \multicolumn{1}{c}{44 lab tests} & \multicolumn{1}{c}{16} & \multicolumn{1}{c}{0} & \multicolumn{1}{c}{0}  \\
-\bottomrule
+\begin{tabular}{@{}cccc@{}}
+\toprule[0.8pt]
+variables            & values       & variables         & values \\ \midrule
+age                  & {[}30-40)    & number\_inpatient & 0      \\
+time\_in\_hospital   & 2 days       & number\_diagnoses & 7      \\
+num\_lab\_procedures & 44 lab tests & diag\_recode      & 250    \\
+num\_medications     & 16           & insulin           & yes    \\
+number\_outpatient   & 0            & max\_glu\_serum   & none   \\
+number\_emergency    & 0            & A1Cresult         & none   \\ 
+\bottomrule[0.8pt]
 \end{tabular}
 \end{table}
 
 
-## 5.Conclusion and Discussion
+
+## 5. Conclusion and Discussion
 
 In conclusion, Random Forest performed the best in the testing data with an accuracy of 61.6%, and numbers of inpatient, emergency, outpatient visits are the three most important predictors of readmission.
 
-
 The performance of models is not ideal. The first reason may be the quality of the data. This dataset is from 1999 to 2008 which may be hard to collect a complete dataset at that period. Lack of crucial test results such as glucose level which is an important indicator of diabetes might be a serious problem that there’s no such significant variables included in our dataset. Second, other model improvement methods such as cross validation may increase the robustness of the model, which we may consider in the future.
 
-
 ### References
-
 [1] Judy Y. Chen, M.D., M.S.H.S., Qiufei Ma, Ph.D., Hua Chen, M.D., and
 Irina Yermilov, M.D., M.P.H.T.M. *New Bundled World: Quality of Care and
 Readmission in Diabetes Patients.*
@@ -282,3 +286,8 @@ between diabetes mellitus and 30-day readmission rates.*
 <https://clindiabetesendo.biomedcentral.com/articles/10.1186/s40842-016-0040-x#citeas>\
 [3] Rubin, D. J. (2015). Hospital readmission of patients with diabetes.
 *Current diabetes reports*, 15(4), 1-9.
+
+### Contribution
+`Anran Yao` Responsible for the prediction model building and comparison and the result of report.\
+`Mingrui Li` Responsible for the data discriptive analysis and the preprocessing section in report.\
+`Wenjing Li` Responsible for maintain and tracking repository and data clearning and preprocessing.
