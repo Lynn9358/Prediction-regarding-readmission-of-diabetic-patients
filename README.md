@@ -12,13 +12,13 @@ Predicts the possibility of readimission in diabetic patients, providing reasona
 ## Method
 - `Prodiction Methods` 
 
-| Logistic Regression | Naive Bayes | Decision Tree | Random Forest |
+| [Logistic Regression](https://en.wikipedia.org/wiki/Logistic_regression) | [Naive Bayes](https://en.wikipedia.org/wiki/Naive_Bayes_classifier) | [Decision Tree](https://en.wikipedia.org/wiki/Decision_tree) | [Random Forest](https://en.wikipedia.org/wiki/Random_forest) |
 |---------------------|-------------|---------------|---------------|
 
 - `Evaluation Methods` 
 
-| AUC | ROC | Confusion Matrix |
-|-----|-----|------------------|
+| [ROC&AUC](https://en.wikipedia.org/wiki/Receiver_operating_characteristic) | [Confusion Matrix](https://en.wikipedia.org/wiki/Confusion_matrix) |
+|---------|------------------|
 
 
 ## Repository Details
