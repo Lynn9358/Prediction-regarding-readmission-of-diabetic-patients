@@ -93,7 +93,7 @@ The right-tailed histogram of the number of inpatient visits versus readmission 
 \begin{subfigure}{.3\textwidth}
 \includegraphics[]{p3.png}
 \end{subfigure}
-\caption{Histograms for Age, Number\_inpatient and Diag\_recode versus Readmitted}
+\caption{a.Age vs.Readmission   b.Number\_inpatient vs.Readmission c.Diag\_recode vs.Readmission}
 \end{figure}
 
 After visualizing the distribution of readmission versus the above two variables, we then explored diagnose after recoding. The plot shows that 250 which indicates diabetes mellitus is the most frequent code that has a higher readmission rate.
