@@ -8,6 +8,16 @@ readmission for diabetic patients based on their demographic and
 physical features of patients, medications, number of certain medical
 record and diagnoses.
 
+## Motivation
+Predicts the possibility of readimission in diabetic patients, providing reasonal advice and reference for doctors to design treatment, as well as providing patients' families and patients with an general remainder of their condition.
+
+## Method
+- `Prodiction Methods` 
+ Logistic Regression| Naive Bayesia |Decision Tree| Random Forest
+
+- `Evaluation Methods` 
+AUC | ROC| Confusion Matrix
+
 
 
 ## Repository Details
@@ -23,6 +33,12 @@ confusion matrix, showinig results for the four prediction methods.
 
 **Report** 
 - `Report.Rmd` Report in .Rmd template
+- `Report.pdf` Report in .pdf template
+
+## Contribution
+- `Anran Yao` Responsible for the prodiction model building and outcome evaluation, as well as the result of report
+- `Mingrui Li` Responsible for the data discriptive analysis and the conclusion section in report
+- `Wenjing Li` Responsible for maintain and tracking repository and data clearning and preprocessing
 
 ## Attribution
 
