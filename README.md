@@ -13,6 +13,13 @@ Predicts the possibility of readimission in diabetic patients, providing reasona
 
 ## Method
 - `Prodiction Methods` 
+| Right | Left | Default | Center |
+|------:|:-----|---------|:------:|
+|   12  |  12  |    12   |    12  |
+|  123  |  123 |   123   |   123  |
+|    1  |    1 |     1   |     1  |
+
+
 |:----:              |:----:           |:----:    |     :----:      |
 | Logistic Regression| Naive Bayesia |Decision Tree| Random Forest|
 
