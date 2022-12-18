@@ -38,21 +38,19 @@ and their performances were evaluated by AUC, ROC, and confusion matrix.
 
 **2.1 Study Population**\
 The dataset we used in this study was provided by Kaggle which contained
-information on diabetic patients who were hospitalized. The data range
-from 1999 to 2008 included a total of 101,766 samples and 50 variables,
-with each sample representing an unique observation of admission. The
-dataset included demographic and physical features of patients,
+information on diabetic patients who were hospitalized. The data ranges
+from 1999 to 2008 including a total of 101,766 samples and 50 variables,
+with each record representing an unique observation of admission. The
+dataset includes demographic and physical features of patients,
 medications, number of certain medical record and diagnoses.
 
 **2.2 Data cleaning**\
-Before analysis, the dataset was cleaned and preprocessed to remove any
+Prior to analysis, the dataset was cleaned and preprocessed to remove any
 missing or irrelevant data. Variables with more than 40% missingness
 were excluded such as weight, payer code and medical specialty.
-Variables that are not representative such as IDs were also excluded. We
-also removed variables of medications that are rarely used in patients
-because of their limited application to the general diabetic population.
+Variables that are not representative such as IDs were also excluded. Medication variables that were rarely used by patients were removed because of their limited application to the general diabetic population.
 Rows containing missing values after selecting variables were directly
-deleted. After exclusion, there were 99492 observations with 30
+deleted. After data cleaning, there were 99,492 observations with 30
 variables.
 
 **2.3 Variables**\
@@ -62,10 +60,10 @@ the patient was readmitted in less or more than 30 days and "No" for no
 record of readmission. We convert the outcome to binary by considering
 "No" as 0, readmitted as 1 no matter less or more than 30 days. The
 variables diagnose 1, diagnose 2 and diagnose 3 were merged to find the
-6 most frequent ICD-9 codes among diabatic patients and considered them
+6 most frequent ICD-9 codes among diabetic patients and considered them
 as a new variable. Those codes with decimal points belong to the same
-diagnosis category to its rounded value, for instance 250.01 and 250
-both indicate diabate.The following variables were concluded in this
+diagnosis category as its rounded value, for instance, 250.01 and 250
+both indicate diabetes. The following variables were concluded in this
 study: number_inpatient, which reflects the number of inpatient visits
 of the patient in the year preceding the encounter; number_enmergency,
 which represents the number of emergency visits; num_medications, which
@@ -75,8 +73,9 @@ medication prescribed; age, which grouped in 10-year intervals.
 
 **2.4 Descriptive analysis**\
 
-Among the 30 variables concluded in this study, there are some variables of high importance with obvious distribution differences in readmission situations, for instance, age,inpatient and diagnose report, which indicates the most common complications of diabetes. In order to study the distribution of age with readmission in diabetic patients, we plot a histogram of age versus readmission. People ages between 50 to 90 have a significantly higher rate of getting readmitted than younger people,  which is also consistent with the age distribution of diabetes prevalence.
+Among the 30 variables concluded in this study, there are some variables of high importance with obvious distribution differences in readmission situations, for instance, age, inpatient and diagnose report, which indicates the most common complications of diabetes. In order to study the distribution of age with readmission in diabetic patients, we plot a histogram of age versus readmission. People ages between 50 to 90 have a significantly higher rate of getting readmitted than younger people,  which is also consistent with the age distribution of diabetes prevalence.
 The right-tailed histogram of the number of inpatient visits versus readmission shows the highest frequency of inpatient visits occurs at 0, indicating that most of diabetic patients have not had inpatient visits.
+The histogram of most frequent ICD-9 codes among diabetic patients shows that the most common complication of diabetes is heart failure.
 
 \setlength{\floatsep}{5pt plus 2pt minus 2pt}
 \setlength{\textfloatsep}{5pt plus 2pt minus 2pt}
@@ -93,10 +92,8 @@ The right-tailed histogram of the number of inpatient visits versus readmission 
 \begin{subfigure}{.3\textwidth}
 \includegraphics[]{p3.png}
 \end{subfigure}
-\caption{Histograms}
+\caption{a.Age vs.Readmission   b.Number\_inpatient vs.Readmission c.Diag\_recode vs.Readmission}
 \end{figure}
-
-After visualizing the distribution of readmission versus the above two variables, we then explored diagnose after recoding. The plot shows that 250 which indicates diabetes mellitus is the most frequent code that has a higher readmission rate.
 
 
 ## 3. Methodology
@@ -115,15 +112,15 @@ input features. The readmission is transformed into a binary outcome
 using a logistic function.
 
 **3.2 Naive Bayesian**\
-Naive Bayesian is a probabilistic machine learning method that is based
-on the principle of Bayesian probability. It is called "naive" because
+Naive bayesian is a probabilistic machine learning method that is based
+on the principle of bayesian probability. It is called "naive" because
 it assumes that all of the features in the dataset are independent of
 one another, which is not always the case in real-world data. Despite
-this assumption, naive Bayesian algorithms can still be very effective
+this assumption, naive bayesian algorithms can still be very effective
 at making predictions in many situations.
 
 **3.3 Decision Tree**\
-Decision tree is a machine learning algorithm that is used to make
+Decision tree is a machine learning algorithm used to make
 predictions based on a tree-like model of decisions. It works by
 dividing the input data into smaller and smaller subsets based on the
 values of the input features. At each step, the algorithm chooses the
@@ -136,7 +133,7 @@ tree by grid search during the model prediction process, and used the
 tuned parameters to predict the readmission outcome of test data.
 
 **3.4 Random Forest**\
-Random forest is an ensemble learning method that is used to make
+Random forest is an ensemble learning method used to make
 predictions based on the collective input of a group of decision trees.
 It works by creating a large number of decision trees using random
 subsets of the input data, and then averaging the predictions made by
@@ -153,7 +150,7 @@ with a value of 1 indicating perfect performance and a value of 0.5
 indicating random performance. ROC (receiver operating characteristic)
 is a plot of the true positive rate against the false positive rate, and
 is used to evaluate the performance of a binary classification model.
-Confusion matrix is a table that shows the number of true positive, true
+Confusion matrix shows the number of true positive, true
 negative, false positive, and false negative predictions made by a
 classification model.
 
@@ -180,15 +177,15 @@ classification model.
 **4.1 Model Comparison**\
 After conducting the prediction methods to train data and testing the
 model performance, we get the confusion matrices of the models. Random
-Forest performed the best in the testing data with an accuracy of 61.6%,
-while Naive Bayesian got the lowest accuracy of 58.7%. The sensitivity
+forest performed the best in the testing data with an accuracy of 61.6%,
+while naive bayesian got the lowest accuracy of 58.7%. The sensitivity
 of each model is relatively poor, being below 50%, which means that the
-rate of missing diagnoses is high. Naive Bayesian got the highest
+rate of missing diagnoses is high. Naive bayesian got the highest
 specificity (91.3%), followed by logistic regression (80.6%), showing
 that our prediction model can recognize as many negative cases as
 possible, without misjudgment of readmission. Area Under Curve and ROC
-Plot (Figure 2) got the same result in accuracy, indicating that Random
-Forest got the best performance, and logistic regression was the second.
+Plot (Figure 2) got the same result in accuracy, indicating that random
+forest got the best performance, and logistic regression was the second.
 
 The importance of variables given by random forest prediction model is
 given by Figure 3. Number of inpatient visits provided the highest
@@ -200,7 +197,7 @@ in information about whether or not to be readmitted in the future,
 i.e., the highest purity. The decision tree selects the number of
 medications administered during the encounter in the third branch,
 indicating that this variable has a strong effect on the model. However,
-Random Forest combines multiple decision trees, which can help to reduce
+random forest combines multiple decision trees, which can help to reduce
 the overall variance of the predictions, which explains why the random
 forest has the best predictive performance on our study.
 
@@ -272,9 +269,9 @@ number\_emergency    & 0            & A1Cresult         & none   \\
 
 ## 5. Conclusion and Discussion
 
-In conclusion, Random Forest performed the best in the testing data with an accuracy of 61.6%, and numbers of inpatient, emergency, outpatient visits are the three most important predictors of readmission.
+In conclusion, random forest performed the best in the testing data with an accuracy of 61.6%, and numbers of inpatient, emergency, outpatient visits are the three most important predictors of readmission.
 
-The performance of models is not ideal. The first reason may be the quality of the data. This dataset is from 1999 to 2008 which may be hard to collect a complete dataset at that period. Lack of crucial test results such as glucose level which is an important indicator of diabetes might be a serious problem that there’s no such significant variables included in our dataset. Second, other model improvement methods such as cross validation may increase the robustness of the model, which we may consider in the future.
+One of the limitation of this study may be the lack of the data quality. This dataset was collected from 1999 to 2008 which may be hard to collect a complete dataset at that period. Lack of crucial test results such as glucose level might be other important factors that affect the model accuracy greatly. Some improvement methods such as cross validation can be applied to increase the robustness of the model, which can be considered as further study.
 
 ### References
 [1] Judy Y. Chen, M.D., M.S.H.S., Qiufei Ma, Ph.D., Hua Chen, M.D., and
