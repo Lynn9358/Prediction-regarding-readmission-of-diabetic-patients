@@ -1,7 +1,5 @@
 
-<!-- README.md is generated from README.Rmd. Please edit that file -->
-
-# Prediction-regarding-readmission-of-diabetic-patients
+# Prediction of Readmission for Diabetic Patients
 
 This is a project to predict the possibility of
 readmission for diabetic patients based on their demographic and
@@ -13,15 +11,9 @@ Predicts the possibility of readimission in diabetic patients, providing reasona
 
 ## Method
 - `Prodiction Methods` 
-| Right | Left | Default | Center |
-|------:|:-----|---------|:------:|
-|   12  |  12  |    12   |    12  |
-|  123  |  123 |   123   |   123  |
-|    1  |    1 |     1   |     1  |
 
-
-|:----:              |:----:           |:----:    |     :----:      |
-| Logistic Regression| Naive Bayesia |Decision Tree| Random Forest|
+| Logistic Regression | Naive Bayes | Decision Tree | Random Forest |
+|---------------------|-------------|---------------|---------------|
 
 - `Evaluation Methods` 
 |:----:|:----:|:----:|
