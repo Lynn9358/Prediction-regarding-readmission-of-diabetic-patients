@@ -37,9 +37,9 @@ confusion matrix, showinig results for the four prediction methods.
 - `Report.pdf` Report in .pdf template
 
 ## Contribution
-- `Anran Yao` Responsible for the prodiction model building and outcome evaluation, as well as the result of report
-- `Mingrui Li` Responsible for the data discriptive analysis and the conclusion section in report
-- `Wenjing Li` Responsible for maintain and tracking repository and data clearning and preprocessing
+- `Anran Yao` Responsible for the prediction model building and comparison and the result of report.
+- `Mingrui Li` Responsible for the data discriptive analysis and the preprocessing section in report.
+- `Wenjing Li` Responsible for maintain and tracking repository and data clearning and preprocessing.
 
 ## Attribution
 
