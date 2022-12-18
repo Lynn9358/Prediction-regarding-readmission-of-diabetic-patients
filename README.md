@@ -3,10 +3,7 @@
 
 # Prediction-regarding-readmission-of-diabetic-patients
 
-<!-- badges: start -->
-
-[![R-CMD-check](https://github.com/Lynn9358/Prediction-regarding-readmission-of-diabetic-patients/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/Lynn9358/Prediction-regarding-readmission-of-diabetic-patients/actions/workflows/R-CMD-check.yaml)
-<!-- badges: end --> This is a project to predict the possibility of
+This is a project to predict the possibility of
 readmission for diabetic patients based on their demographic and
 physical features of patients, medications, number of certain medical
 record and diagnoses.
