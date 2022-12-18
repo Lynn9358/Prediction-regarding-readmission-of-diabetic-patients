@@ -16,6 +16,7 @@ Predicts the possibility of readimission in diabetic patients, providing reasona
 |---------------------|-------------|---------------|---------------|
 
 - `Evaluation Methods` 
+
 | AUC | ROC | Confusion Matrix |
 |-----|-----|------------------|
 
