@@ -23,7 +23,7 @@ Predicts the possibility of readimission in diabetic patients, providing reasona
 
 ## Repository Details
 
-**R**  
+**R code**  
 - `dataprocessing.R` Read and clean the raw data, recode for diagnoses
 and medical. Code used for descriptive analysis.  
 - `predictionmodels.R` Code for spliting data and predictive model,
