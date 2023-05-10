@@ -10,7 +10,7 @@ record and diagnoses.
 Predicts the possibility of readimission in diabetic patients, providing reasonal advice and reference for doctors to design treatment, as well as providing patients' families and patients with an general remainder of their condition.
 
 ## Method
-- `Prodiction Methods` 
+- `Prediction Methods` 
 
 | [Logistic Regression](https://en.wikipedia.org/wiki/Logistic_regression) | [Naive Bayes](https://en.wikipedia.org/wiki/Naive_Bayes_classifier) | [Decision Tree](https://en.wikipedia.org/wiki/Decision_tree) | [Random Forest](https://en.wikipedia.org/wiki/Random_forest) |
 |---------------------|-------------|---------------|---------------|
